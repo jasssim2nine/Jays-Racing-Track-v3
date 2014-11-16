@@ -1,0 +1,19 @@
+{
+"images": ["trackatlas.png"],
+"frames": [
+
+    [2, 2, 57, 210], 
+    [61, 2, 72, 82], 
+    [135, 2, 72, 82]
+],
+"animations": {
+    
+        "speedbraker":[0], 
+        "bike2":[1], 
+        "bike1":[2]
+},
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:38042c0702609902438302cc92bfd103:c5317d997b8373ad4a8e35a387939f56:651fb03fd5e43d1123599549dd96f9f2$",
+        "Created with TexturePacker (http://www.texturepacker.com) for EaselJS"
+]
+}

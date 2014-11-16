@@ -36,7 +36,7 @@ var bike: objects.Bike;
 var speedbrakers = [];
 var tracks: objects.Tracks;
 var scoreboard: objects.Scoreboard;
-
+var time :number=0;
 var currentState: number;
 var currentStateFunction;
 
@@ -59,23 +59,27 @@ function init(): void {
 }
 //gameLoop function
 function gameLoop(): void {
-    
+    time++;
     currentStateFunction();
     stage.update();
+   
 }
 
 function changeState(state: number) {
     switch (state) {
         case constants.MENU_STATE:
             currentStateFunction = states.menuState;
+            
             states.Menu();
             break;
         case constants.PLAY_STATE:
             currentStateFunction = states.playState;
+
             states.Play();
             break;
        case constants.GAME_OVER_STATE:
-            currentStateFunction = states.gameOverState;
+           currentStateFunction = states.gameOverState;
+          
             states.GameOver();
             break;
         case constants.INSTRUCTIONS_STATE:
@@ -125,9 +129,8 @@ function bikeAndspeedBraker(s1: objects.speedBraker) {
     p2.y = speedbraker.y;
 
     if (distance(p1, p2) <= (38)) {
-        
-        scoreboard.lives -= 1;
         speedbraker.reset();
+        scoreboard.lives -= 1;
     }
 }
 
@@ -139,6 +142,6 @@ function collisionCheck() {
 
 
 function gameStart(): void {
-
+   
   
 }

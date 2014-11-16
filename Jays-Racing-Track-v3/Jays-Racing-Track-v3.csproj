@@ -63,6 +63,9 @@
     <Content Include="assets\images\bikeatlas.png" />
     <Content Include="assets\images\speedbraker.png" />
     <Content Include="assets\images\tracks.png" />
+    <Content Include="assets\sounds\gameover.mp3" />
+    <Content Include="assets\sounds\play.mp3" />
+    <Content Include="assets\sounds\theme.mp3" />
     <Content Include="Scripts\lib\jquery-2.1.1.min.map" />
     <Content Include="packages.config" />
     <Content Include="assets\images\atlas.json" />
@@ -93,9 +96,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\sounds\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="constants.ts" />
     <TypeScriptCompile Include="Scripts\lib\createjs-lib.d.ts" />

@@ -24,9 +24,10 @@
 
         static manifest = [
             { id: "speedbraker", src: "assets/images/speedbraker.png" },
-            { id: "tracks", src: "assets/images/tracks.png" }
-           
-           
+            { id: "tracks", src: "assets/images/tracks.png" } ,
+             {id : "startup", src: "assets/sounds/theme.mp3"},
+             { id: "play", src: "assets/sounds/play.mp3" },
+            { id: "gameover", src: "assets/sounds/gameover.mp3" }
         ];
 
         static init() {

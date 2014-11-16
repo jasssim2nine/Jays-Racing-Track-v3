@@ -20,6 +20,7 @@
         }
 
         update() {
+            
             this.x -= this.dx;
             if (this.x <= -65) {
                 this.reset();

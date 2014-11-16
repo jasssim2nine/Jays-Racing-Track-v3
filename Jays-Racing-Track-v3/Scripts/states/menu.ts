@@ -6,6 +6,7 @@
 module states {
 
     export function menuState() {
+       
         tracks.update();
         bike.update();
     }
@@ -13,14 +14,18 @@ module states {
      
 
     export function Menu() {
+        createjs.Sound.play('startup');
+    
+
+        
         var racingText: createjs.Text;
         var instructionText: createjs.Text;
         game = new createjs.Container();
-
+        
         tracks = new objects.Tracks(game);
         bike = new objects.Bike(game);
 
-        racingText = new createjs.Text("Jays Racing Track", constants.GAME_FONT, constants.FONT_COLOUR);
+        racingText = new createjs.Text("PLAY", constants.GAME_FONT, constants.FONT_COLOUR);
        
         racingText.regX = racingText.getBounds().width * 0.5;
         racingText.regY = racingText.getBounds().height * 0.5;
@@ -35,6 +40,7 @@ module states {
 
         racingText.addEventListener("click", function (e) {
             stage.removeChild(game);
+            createjs.Sound.removeSound('play','assest/sounds/theme.mp3');
             game.removeAllChildren();
             game.removeAllEventListeners();
             currentState = constants.PLAY_STATE;
@@ -42,7 +48,7 @@ module states {
         });
 
 
-        instructionText = new createjs.Text("Instructions", constants.GAME_FONT, constants.FONT_COLOUR);
+        instructionText = new createjs.Text("INSTRUCTIONS", constants.GAME_FONT, constants.FONT_COLOUR);
         instructionText.regX = instructionText.getBounds().width * 0.5;
         instructionText.regY = instructionText.getBounds().height * 0.5;
         instructionText.x = stage.canvas.width * 0.5;
@@ -55,6 +61,7 @@ module states {
             currentState = constants.INSTRUCTIONS_STATE;
             changeState(currentState);
         });
+       
         stage.addChild(game);
     }
 

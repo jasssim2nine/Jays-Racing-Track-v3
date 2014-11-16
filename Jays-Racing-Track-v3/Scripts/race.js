@@ -24,6 +24,7 @@ var bike;
 var speedbrakers = [];
 var tracks;
 var scoreboard;
+var time = 0;
 var currentState;
 var currentStateFunction;
 //preload function
@@ -43,6 +44,7 @@ function init() {
 }
 //gameLoop function
 function gameLoop() {
+    time++;
     currentStateFunction();
     stage.update();
 }
@@ -95,8 +97,8 @@ function bikeAndspeedBraker(s1) {
     p2.x = speedbraker.x;
     p2.y = speedbraker.y;
     if (distance(p1, p2) <= (38)) {
-        scoreboard.lives -= 1;
         speedbraker.reset();
+        scoreboard.lives -= 1;
     }
 }
 function collisionCheck() {

@@ -23,6 +23,8 @@ var states;
     }
     states.playState = playState;
     function Play() {
+        time = 0;
+        createjs.Sound.play('play', createjs.Sound.PLAY_INTERRUPTED, 0, 0, 0, 1);
         game = new createjs.Container();
         var logoText;
         tracks = new objects.Tracks(game);

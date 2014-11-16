@@ -14,8 +14,8 @@ var objects;
             this.game.addChild(this.label);
         }
         Scoreboard.prototype.update = function () {
-            this.labelString = "Lives: " + this.lives.toString() + " Score: " + this.score.toString();
-            this.label.text = this.labelString;
+            //this.labelString = "Lives: " + this.lives.toString() + " Time-Elapsed: " + this.score.toString();
+            this.label.text = "Lives: " + this.lives.toString() + " Time-Elapsed: " + time.toString();
         };
         return Scoreboard;
     })();

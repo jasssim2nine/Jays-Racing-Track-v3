@@ -10,12 +10,13 @@ var states;
     }
     states.menuState = menuState;
     function Menu() {
+        createjs.Sound.play('startup');
         var racingText;
         var instructionText;
         game = new createjs.Container();
         tracks = new objects.Tracks(game);
         bike = new objects.Bike(game);
-        racingText = new createjs.Text("Jays Racing Track", constants.GAME_FONT, constants.FONT_COLOUR);
+        racingText = new createjs.Text("PLAY", constants.GAME_FONT, constants.FONT_COLOUR);
         racingText.regX = racingText.getBounds().width * 0.5;
         racingText.regY = racingText.getBounds().height * 0.5;
         racingText.x = stage.canvas.width * 0.5;
@@ -23,12 +24,13 @@ var states;
         game.addChild(racingText);
         racingText.addEventListener("click", function (e) {
             stage.removeChild(game);
+            createjs.Sound.removeSound('play', 'assest/sounds/theme.mp3');
             game.removeAllChildren();
             game.removeAllEventListeners();
             currentState = constants.PLAY_STATE;
             changeState(currentState);
         });
-        instructionText = new createjs.Text("Instructions", constants.GAME_FONT, constants.FONT_COLOUR);
+        instructionText = new createjs.Text("INSTRUCTIONS", constants.GAME_FONT, constants.FONT_COLOUR);
         instructionText.regX = instructionText.getBounds().width * 0.5;
         instructionText.regY = instructionText.getBounds().height * 0.5;
         instructionText.x = stage.canvas.width * 0.5;
